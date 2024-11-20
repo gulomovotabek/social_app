@@ -1,13 +1,19 @@
 from rest_framework import permissions
-from rest_framework.decorators import action
-from rest_framework.mixins import CreateModelMixin, UpdateModelMixin
+from rest_framework.mixins import (
+    CreateModelMixin,
+    UpdateModelMixin,
+)
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
 from users.models import User
-from users.serializers import CreateProfileSerializer, RetrieveProfileSerializer, UpdateProfileSerializer
+from users.serializers import (
+    CreateProfileSerializer,
+    RetrieveProfileSerializer,
+    UpdateProfileSerializer,
+)
 
 
 class ProfileViewSet(CreateModelMixin, UpdateModelMixin, GenericViewSet):

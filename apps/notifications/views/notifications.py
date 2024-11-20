@@ -10,4 +10,7 @@ class NotificationViewSet(ListModelMixin, GenericViewSet):
     serializer_class = NotificationSerializer
 
     def get_queryset(self):
-        return self.queryset.filter(action_by=self.request.user)
+        return self.queryset.select_related(
+            "post__author",
+            "action_by",
+        )
