@@ -15,4 +15,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path('profile', profile_view, name='profile'),
     path("login/", views.LoginView.as_view(), name="login"),
+    path("login-session/", views.LoginWithSessionApiView.as_view(), name="login_session"),
 ]
